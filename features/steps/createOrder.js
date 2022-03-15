@@ -43,8 +43,6 @@ Given(/^user select "([^"]*)" radio$/, async function (radioType) {
     await this.page.waitForTimeout(5000)
 });
 Then(/^user Elif sees transfer type as "([^"]*)"$/, async function (transType) {
-    // "Elif": "[data-test-id='ordered-trans-type-container-Elif']",
-    // "Takeaway": "[data-test-id='order-radio-takeaway-input-box']",
     const targetElement = createOrder['First Ordered Item']
     const type = createOrder[transType]
     const generic = targetElement + ' ' + type
@@ -57,4 +55,9 @@ Then(/^user Kemal sees "([^"]*)" in the header$/, async function (text) {
     await waitForSelector.call(this, targetElement)
     await checkContainsText.call(this, targetElement, false, text);
 
+});
+Then(/^user Kemal sees "([^"]*)" in the drawer$/, async function (numberOfMeals) {
+    const targetElement = createOrder['Added Number Of Item']
+    await waitForSelector.call(this, targetElement)
+    await checkContainsText.call(this, targetElement, false, numberOfMeals);
 });

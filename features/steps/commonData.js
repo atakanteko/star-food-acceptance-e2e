@@ -17,6 +17,8 @@ const createOrder = {
     "Takeaway": "[data-test-id='order-radio-takeaway-input-box']",
     "Takeaway Trans Type": "[data-test-id='ordered-trans-type-container-0']",
     "Added Item Number Box": "[data-test-id='show-number-of-item']",
+    "Added Number Of Item": "[data-test-id='toggleable-number-of-added-meal']",
+    "Toggle Nav": "[data-test-id='toggleable-btn-accepted']",
 }
 
 module.exports = {

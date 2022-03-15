@@ -32,7 +32,7 @@ Feature: Create Order Page
     When user landing dashboard
 
     Then user Elif sees transfer type as "Takeaway Trans Type"
-  @cell
+
   Scenario: When user fill all inputs and sees number of
     Given user types "Kemal" to "Name Input Box" input
     Given user types "05443331199" to "Contact Input Box" input
@@ -43,3 +43,15 @@ Feature: Create Order Page
     When user landing dashboard
 
     Then user Kemal sees "Show 1 Elements" in the header
+  @cell
+  Scenario: When user fill all inputs and sees number of meals
+    Given user types "Kemal" to "Name Input Box" input
+    Given user types "05443331199" to "Contact Input Box" input
+    Given user select "Takeaway" radio
+    Given user selects items in "Order Items" select box
+    Given user click "Add Order" button
+    Given user landing dashboard
+
+    When user click "Toggle Nav" button
+
+    Then user Kemal sees "1" in the drawer
