@@ -12,7 +12,11 @@ const createOrder = {
     "Contact Input Box": "[data-test-id='order-contact-input-box']",
     "Order Items": "[data-test-id='order-select-input-box']",
     "Add Order": "[data-test-id='add-order-btn']",
-    "Mehmet": "[data-test-id='ordered-meals-container-Mehmet']",
+    "First Ordered Item": "[data-test-id='ordered-meals-container-0']",
+    "Elif": "[data-test-id='ordered-trans-type-container-Elif']",
+    "Takeaway": "[data-test-id='order-radio-takeaway-input-box']",
+    "Takeaway Trans Type": "[data-test-id='ordered-trans-type-container-0']",
+
 }
 
 module.exports = {

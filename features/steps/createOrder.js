@@ -5,6 +5,7 @@ const sendKeys = require('../support/action/sendKeys')
 const checkHasClass = require('../support/check/checkHasClass')
 const checkElementExistsv2 = require('../support/check/checkElementExistsv2')
 const {createOrder} = require('../steps/commonData')
+const checkContainsText = require("../support/check/checkContainsText");
 
 
 Given(/^user types "([^"]*)" to "([^"]*)" input$/, async function (userInput, param) {
@@ -30,8 +31,24 @@ Given(/^user click "([^"]*)" button$/, async function (param) {
     await waitForSelector.call(this, targetElement)
     await clickElement.call(this, targetElement, targetElement);
 });
-Then(/^user "([^"]*)" sees the added meal$/, async function (user) {
-    const targetElement = createOrder[user]
+Then(/^user Mehmet sees the added meal$/, async function () {
+    const targetElement = createOrder['First Ordered Item']
     await waitForSelector.call(this, targetElement)
     await checkElementExistsv2.call(this, targetElement,false);
+});
+Given(/^user select "([^"]*)" radio$/, async function (radioType) {
+    const targetElement = createOrder[radioType]
+    await waitForSelector.call(this, targetElement)
+    await clickElement.call(this, targetElement, targetElement);
+    await this.page.waitForTimeout(5000)
+});
+Then(/^user Elif sees transfer type as "([^"]*)"$/, async function (transType) {
+    // "Elif": "[data-test-id='ordered-trans-type-container-Elif']",
+    // "Takeaway": "[data-test-id='order-radio-takeaway-input-box']",
+    const targetElement = createOrder['First Ordered Item']
+    const type = createOrder[transType]
+    const generic = targetElement + ' ' + type
+    await waitForSelector.call(this, targetElement)
+    await waitForSelector.call(this, type)
+    await checkContainsText.call(this, generic, false, "Takeaway");
 });
