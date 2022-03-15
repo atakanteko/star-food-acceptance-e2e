@@ -20,10 +20,18 @@ When(/^user landing dashboard$/, async function () {
 Then(/^user should see "([^"]*)" text$/, async function (param) {
     const element = dashboard[param]
     await waitForSelector.call(this, element)
-    await checkContainsText.call(this, element, false, "Accepted");
+    await checkContainsText.call(this, element, false, param);
 });
 
 When(/^user click "([^"]*)"$/, async function (param) {
     const button = dashboard[param]
     await clickElement.call(this, button,button)
+});
+
+Given(/^that user on create order$/, async function () {
+    await openUrl.call(this, `${url}create_order`);
+});
+
+When(/^user landing create order$/, async function () {
+    await checkUrl.call(this, false, 'http://localhost:3000/create_order')
 });
