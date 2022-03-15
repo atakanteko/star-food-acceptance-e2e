@@ -1,0 +1,28 @@
+{
+  "name": "cucumber-puppeteer",
+  "version": "1.0.0",
+  "description": "BDD with Cucumber and Puppeteer",
+  "main": "index.js",
+  "scripts": {
+    "run:cucumber-headless":"npx cucumber-js --world-parameters '{\"headless\": true}'",
+    "run:cucumber-headfully":"npx cucumber-js --world-parameters '{\"headless\": false}'",
+    "run:work-headfully":"npx cucumber-js --fail-fast --tags @cell --world-parameters '{\"headless\": false}'",
+    "run:work-headless":"npx cucumber-js --fail-fast --tags @cell --world-parameters '{\"headless\": true}'"
+  },
+  "keywords": [
+    "cucumber",
+    "puppeteer",
+    "bdd"
+  ],
+  "author": "atakan.tekoglu",
+  "license": "ISC",
+  "dependencies": {
+    "axe-puppeteer": "^1.1.1",
+    "axe-reports": "^1.1.11",
+    "pixelmatch": "^5.2.1",
+    "pngjs": "^6.0.0",
+    "@cucumber/cucumber": "^8.0.0-rc.1",
+    "puppeteer": "^13.0.1",
+    "dotenv": "^8.2.0"
+  }
+}
