@@ -6,8 +6,13 @@ Feature: Try to login as any user
     Given that user on dashboard
     When user landing dashboard
     Then user should see "Accepted" text
-  @cell
+
   Scenario: User wants to go create order page
     Given that user on dashboard
-    When user click "Add New Order" button
+    When user click "Add New Order"
+    Then user should see "Create Order" text
+
+  Scenario: User wants to go create order page via logo
+    Given that user on dashboard
+    When user click "Logo"
     Then user should see "Create Order" text

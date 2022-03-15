@@ -21,7 +21,7 @@ Then(/^user should see "([^"]*)" text$/, async function (param) {
     await waitForSelector.call(this, element)
 });
 
-When(/^user click "([^"]*)" button$/, async function (param) {
+When(/^user click "([^"]*)"$/, async function (param) {
     const button = dashboard[param]
     await clickElement.call(this, button,button)
 });
