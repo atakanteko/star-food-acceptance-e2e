@@ -4,6 +4,7 @@ const clickElement = require('../support/action/clickElement')
 const waitForSelector = require('../support/action/waitForSelector')
 const sendKeys = require('../support/action/sendKeys')
 const checkElementText = require('../support/check/checkElementText')
+const checkContainsText = require('../support/check/checkContainsText')
 const checkUrl = require('../support/check/checkUrl')
 const {url} = require('../global/commonData')
 const {dashboard} = require('../steps/commonData')
@@ -19,6 +20,7 @@ When(/^user landing dashboard$/, async function () {
 Then(/^user should see "([^"]*)" text$/, async function (param) {
     const element = dashboard[param]
     await waitForSelector.call(this, element)
+    await checkContainsText.call(this, element, false, "Accepted");
 });
 
 When(/^user click "([^"]*)"$/, async function (param) {
