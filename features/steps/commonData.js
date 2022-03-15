@@ -16,7 +16,7 @@ const createOrder = {
     "Elif": "[data-test-id='ordered-trans-type-container-Elif']",
     "Takeaway": "[data-test-id='order-radio-takeaway-input-box']",
     "Takeaway Trans Type": "[data-test-id='ordered-trans-type-container-0']",
-
+    "Added Item Number Box": "[data-test-id='show-number-of-item']",
 }
 
 module.exports = {

@@ -52,3 +52,9 @@ Then(/^user Elif sees transfer type as "([^"]*)"$/, async function (transType) {
     await waitForSelector.call(this, type)
     await checkContainsText.call(this, generic, false, "Takeaway");
 });
+Then(/^user Kemal sees "([^"]*)" in the header$/, async function (text) {
+    const targetElement = createOrder['Added Item Number Box']
+    await waitForSelector.call(this, targetElement)
+    await checkContainsText.call(this, targetElement, false, text);
+
+});
