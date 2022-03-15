@@ -12,3 +12,12 @@ Feature: Create Order Page
 
     Then user sees "Add Order" button's background color as green
 
+  Scenario: When user fill all inputs and go dashboard page and sees the meal
+    Given user types "Mehmet" to "Name Input Box" input
+    Given user types "05343332211" to "Contact Input Box" input
+    Given user selects items in "Order Items" select box
+    Given user click "Add Order" button
+
+    When user landing dashboard
+
+    Then user "Mehmet" sees the added meal

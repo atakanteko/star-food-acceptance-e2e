@@ -3,6 +3,7 @@ const clickElement = require('../support/action/clickElement')
 const waitForSelector = require('../support/action/waitForSelector')
 const sendKeys = require('../support/action/sendKeys')
 const checkHasClass = require('../support/check/checkHasClass')
+const checkElementExistsv2 = require('../support/check/checkElementExistsv2')
 const {createOrder} = require('../steps/commonData')
 
 
@@ -23,4 +24,14 @@ Then(/^user sees "([^"]*)" button's background color as green$/, async function 
     const targetElement = createOrder[param]
     await waitForSelector.call(this, targetElement)
     await checkHasClass.call(this, targetElement, false, "greenBg")
+});
+Given(/^user click "([^"]*)" button$/, async function (param) {
+    const targetElement = createOrder[param]
+    await waitForSelector.call(this, targetElement)
+    await clickElement.call(this, targetElement, targetElement);
+});
+Then(/^user "([^"]*)" sees the added meal$/, async function (user) {
+    const targetElement = createOrder[user]
+    await waitForSelector.call(this, targetElement)
+    await checkElementExistsv2.call(this, targetElement,false);
 });
