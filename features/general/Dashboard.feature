@@ -12,5 +12,5 @@ Feature: Dashboard Page
 
   Scenario: User wants to go create order page via logo
     Given that user on dashboard
-    When user click "Logo"
+    When user click "Create Order Image"
     Then user should see "Create Order" text
