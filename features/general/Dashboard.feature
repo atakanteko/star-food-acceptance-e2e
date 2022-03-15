@@ -1,6 +1,4 @@
-Feature: Try to login as any user
-  I want to login unsuccessfully.
-  So that I can check the warnings depend on this behavior
+Feature: Dashboard Page
 
   Scenario: Landing dashboard page
     Given that user on dashboard
