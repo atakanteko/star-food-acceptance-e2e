@@ -1,5 +1,21 @@
+## E2E Acceptance Test
 
-# Cucumber and Puppeteer
+### Tech Stack
+
+- [**Cucumber.js**](https://cucumber.io/docs/installation/javascript/)
+- [**Puppeteer**](https://pptr.dev/)
+
+**How To Run**
+Clone project and install dependencies
+
+- Run All Scenarios Headless - **npm run run:cucumber-headless**
+- Run All Scenarios Headfully - **npm run run:cucumber-headfully**
+- Run a Specific Scenario Headfully - **npm run run:work-headfully**
+  **- You must add @cell tag the scenario that you will run**
+- Run a Specific Scenario Headless - **npm run run:work-headless**
+  **- You must add @cell tag the scenario that you will run**
+
+## Cucumber and Puppeteer
 
 Cucumber, Behaviour-Driven Development (BDD) destekleyen bir araçtır. İlk olarak BDD nedir sorusuna cevap verelim.
 
@@ -32,4 +48,5 @@ Gördüğümüz gibi senaryo adımlardan oluşmaktadır. Bu adımlar sırası il
 Gherkin dokümanları **.feature** uzantılı dosyalara yazılır.
 
 Yukarıdaki senaryonun her bir adımını oluşturan unsur **step-definition** olarak adlandırılır. Bu adımlar bir çok programlama dili ile gerçeklenebilmektedir.
+
 
