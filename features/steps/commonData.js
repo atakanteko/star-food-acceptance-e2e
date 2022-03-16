@@ -19,6 +19,7 @@ const createOrder = {
     "Added Item Number Box": "[data-test-id='show-number-of-item']",
     "Added Number Of Item": "[data-test-id='toggleable-number-of-added-meal']",
     "Toggle Nav": "[data-test-id='toggleable-btn-accepted']",
+    "Cancel Button": "[data-test-id='cancel-order-btn']",
 }
 
 module.exports = {

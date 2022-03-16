@@ -43,7 +43,7 @@ Feature: Create Order Page
     When user landing dashboard
 
     Then user Kemal sees "Show 1 Elements" in the header
-  @cell
+
   Scenario: When user fill all inputs and sees number of meals
     Given user types "Kemal" to "Name Input Box" input
     Given user types "05443331199" to "Contact Input Box" input
@@ -55,3 +55,12 @@ Feature: Create Order Page
     When user click "Toggle Nav" button
 
     Then user Kemal sees "1" in the drawer
+  @cell
+  Scenario: When user fill all inputs and sees cancel button
+    Given user types "Kemal" to "Name Input Box" input
+    Given user types "05443331199" to "Contact Input Box" input
+    Given user select "Takeaway" radio
+
+    When user selects items in "Order Items" select box
+
+    Then user sees "Cancel Button"

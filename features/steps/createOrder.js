@@ -61,3 +61,7 @@ Then(/^user Kemal sees "([^"]*)" in the drawer$/, async function (numberOfMeals)
     await waitForSelector.call(this, targetElement)
     await checkContainsText.call(this, targetElement, false, numberOfMeals);
 });
+Then(/^user sees "([^"]*)"$/, async function (param) {
+    const targetElement = createOrder[param]
+    await waitForSelector.call(this, targetElement)
+});
